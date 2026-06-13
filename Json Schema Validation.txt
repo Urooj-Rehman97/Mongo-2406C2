@@ -1,0 +1,23 @@
+db.createCollection("customer",{
+validator:{
+$jsonSchema:{
+title: "Customer Object Validation",
+required:["name","email","phoneNo"],
+properties:{
+name:{
+bsonType: "string",
+description: "Name must be in string"
+},
+email:{
+bsonType: "string",
+description: "Name must be in string"
+},
+phoneNo:{
+bsonType: "string",
+minimum: 9,
+description: "Invalid phone Number"
+}
+}
+}
+}
+})
